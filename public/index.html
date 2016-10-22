@@ -1,17 +1,22 @@
 <!DOCTYPE html>
-<html  ng-app="GreenCity">
-	<head>
+<html lang="en" ng-app="GreenCity">
+<head>
+	<meta charset="UTF-8">
+	<title>Link Generator</title>
+	<link rel="stylesheet" href="./css/main.css" media="screen" title="no title">
+	<link rel="stylesheet" href="./css/fonts.css" media="screen" title="no title">
+	<link rel="stylesheet" href="./css/common.css" media="screen" title="no title">
+</head>
+<body>
+	<div ui-view></div>
 
-		<meta charset="utf-8">
-		<title>Green City App</title>
-		</head>
-	<body>
+	<script src="libs/angular.js"></script>
+	<script src="libs/angular-ui-router.js"></script>
 
-		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
-		<script src="//unpkg.com/angular-ui-router@0.3.1/release/angular-ui-router.js">
+	<script src="app/app.module.js"></script>
+	<script src="app/app.routes.js"></script>
 
-		</script>
-		<script src="./app.module.js"></script>
-		<script src="./app.routes.js"></script>
-	</body>
+	<script src="app/components/main/controllers/main.ctrl.js"></script>
+
+</body>
 </html>

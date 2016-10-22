@@ -1,0 +1,44 @@
+body {
+	padding-top: 50px;
+}
+
+.wrapper {
+	width: 90%;
+	margin: 0 auto;
+}
+
+.btn-wrapper {
+	display: flex;
+}
+
+header {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.btn {
+	display: flex;
+	flex-direction:row;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+	width: 140px;
+	height: 60px;
+	background-color: #388E3C;
+	border-radius: 8px;
+	margin-right: 60px;
+	font-family: blackBox;
+	font-size: 2.5em;
+	color: #fff;
+	cursor: pointer;
+}
+
+main {
+	width: 100%;
+	height: 700px;
+	background-color: #C8E6C9;
+	margin-top: 40px;
+	border-radius: 8px;
+}

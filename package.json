@@ -1,16 +1,27 @@
 {
-  "name": "GreenCity",
-  "version": "0.0.0",
-  "description": "",
-  "private" : "true" ,
+  "name": "linkgen",
+  "version": "1.0.0",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://nichita000@bitbucket.org/nichita000/awesome-repository-by-nichita-ursu-and-v.b.git"
+  },
   "author": "",
   "license": "ISC",
+  "homepage": "https://bitbucket.org/nichita000/awesome-repository-by-nichita-ursu-and-v.b#readme",
   "dependencies": {
     "body-parser": "^1.15.2",
-    "express": "^4.14.0"
+
+    "express": "^4.14.0",
+	"uuid": "^2.0.2"
+  },
+  "description": "",
+
+    "express": "^4.14.0",
+    "uuid": "^2.0.2"
   }
-}
+
+

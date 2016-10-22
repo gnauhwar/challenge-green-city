@@ -1,9 +1,12 @@
 {
-  "name": "jshacks",
+  "name": "linkgen",
+  "authors": [
+    "nichita000 <nichita.ursu.v@gmail.com>"
+  ],
   "description": "",
-  "main": "index.js",
-  "license": "ISC",
-  "homepage": "https://github.com/jshacks/challenge-green-city",
+  "main": "index.html",
+  "license": "MIT",
+  "homepage": "",
   "ignore": [
     "**/.*",
     "node_modules",
@@ -11,11 +14,7 @@
     "test",
     "tests"
   ],
-  "authors": [
-    "nichita <nichita.ursu.v@gmail.com>"
-  ],
   "dependencies": {
-    "angular": "^1.5.8",
-    "angular-ui-router": "ui-router#^0.3.1"
+    "express": "^4.14.0"
   }
 }
