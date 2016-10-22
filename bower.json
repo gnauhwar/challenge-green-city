@@ -3,12 +3,19 @@
   "description": "",
   "main": "index.js",
   "license": "ISC",
-  "homepage": "",
+  "homepage": "https://github.com/jshacks/challenge-green-city",
   "ignore": [
     "**/.*",
     "node_modules",
     "bower_components",
     "test",
     "tests"
-  ]
+  ],
+  "authors": [
+    "nichita <nichita.ursu.v@gmail.com>"
+  ],
+  "dependencies": {
+    "angular": "^1.5.8",
+    "angular-ui-router": "ui-router#^0.3.1"
+  }
 }
