@@ -13,7 +13,7 @@
 					templateUrl: 'app/components/main/templates/main.tpl.html'
 				})
 				.state('main.map', {
-					url: '/map'
+					url: '/map',
 				})
 				.state('main.table', {
 					url: '/table'

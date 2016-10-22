@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+    <meta charset="utf-8">
+    <title>Grin Map</title>
+    <style>
+      html, body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+      }
+      #map {
+        height: 100%;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="map"></div>
+    <script>
+var radius = 20000;
+
+var citymap = {
+  chisinau: {
+    center: {lat: 47.01116, lng: 28.85147},
+    info: '<div> fderf ef ew</div>'
+  },
+  balti: {
+    center: {lat: 47.76333, lng: 27.92175},
+    info: '<div>test</div>'
+  },
+  cahul: {
+    center: {lat: 45.90601, lng: 28.19778},
+    info: '<div> fffffffff</div>'
+  },
+  gagauzia: {
+    center: {lat: 46.09323, lng: 28.63586},
+    info: '<div>323234</div>'
+  }
+};
+
+
+function initMap() {
+  var map = new google.maps.Map(document.getElementById('map'), {
+    zoom: 8,
+    center: {lat: 47.01116, lng: 28.85147},
+    mapTypeId: google.maps.MapTypeId.TERRAIN
+  });
+  var circleArr = [];
+  var infowindowArr = [];
+
+  for (var city in citymap) {
+
+    var content = citymap[city].info;
+    var latLng =  citymap[city].center;
+    var infowindow = new google.maps.InfoWindow({
+      content: content
+    });
+
+    var marker = new google.maps.Circle({
+      strokeColor: '#FF0000',
+      strokeOpacity: 0.8,
+      strokeWeight: 0,
+      fillColor: '#FF0000',
+      fillOpacity: 0.35,
+      map: map,
+      center: citymap[city].center,
+      radius: radius
+    });
+
+    google.maps.event.addListener(marker,'click', (function(marker,latLng,content,infowindow){ 
+      return function() {
+        infowindow.open(map);
+        infowindow.setPosition(latLng);
+
+      };
+    })(marker,latLng,content,infowindow)); 
+   
+  }
+}
+
+function addlatLng(event) {
+  
+  infowindow.open(map);
+}
+
+    </script>
+    <script async defer
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCfS_0MEtrObbcuOuMe2xp4b_8fxORG6BI&signed_in=true&callback=initMap"></script>
+  </body>
+</html>

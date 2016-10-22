@@ -13,15 +13,14 @@
   "license": "ISC",
   "homepage": "https://bitbucket.org/nichita000/awesome-repository-by-nichita-ursu-and-v.b#readme",
   "dependencies": {
-    "body-parser": "^1.15.2",
-
-    "express": "^4.14.0",
-	"uuid": "^2.0.2"
+    "body-parser": "^1.15.2"
   },
   "description": "",
 
     "express": "^4.14.0",
-    "uuid": "^2.0.2"
+    "uuid": "^2.0.2",
+    "excel-parser": "^0.2.2",
+    "express": "^4.14.0",
+    "jsonfile": "^2.4.0",
+    "path": "^0.12.7"
   }
-
-

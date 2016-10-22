@@ -1,5 +1,7 @@
 module.exports = function (app) {
     var main = require('./app/main.js');
 
-    app.get('/aa', main.testApi);
+
+  app.get('/test', main.testApi);
+  app.get('/parse', main.parseApi)
 };
