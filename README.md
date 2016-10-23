@@ -26,11 +26,11 @@ Guides and the API reference are located in the
 *Clone the project
 
 *Install dependencies:
-  -cd <%project-folder%>
-  -npm i
+  - cd <%project-folder%>
+  - npm i
 
 *Run the Server
-  -node server/server.js
+  - node server/server.js
 
 ## Community
 
