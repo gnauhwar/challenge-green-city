@@ -127,7 +127,7 @@ module.exports.parseApi = function parseApi (req, res) {
 
 
 module.exports.dataApi = function dataApi (req, res) {
-  var obj = JSON.parse(fs.readFileSync('../cities.json', 'utf8'));
+  var obj = JSON.parse(fs.readFileSync('./cities.json', 'utf8'));
   var array = [];
 
   var result = JSON.parse(JSON.stringify(obj));
