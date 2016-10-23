@@ -26,7 +26,6 @@ function initMap() {
     center: {lat: 47.01116, lng: 28.85147},
     mapTypeId: google.maps.MapTypeId.TERRAIN
   });
-
   var countryCircle = {
     chisinau: {
       center: {lat: 47.01116, lng: 28.85147},
@@ -141,8 +140,6 @@ function initMap() {
   xhttp.send();
 
 
-  
-
 }
 
 function hideCountryCircle() {
@@ -161,7 +158,6 @@ function hideCityCircle() {
     cityCircleArr[i].setVisible(false);
   };
 }
-
 function showCityCircle() {
   for (var i = 0; i < cityCircleArr.length; i++) {
     cityCircleArr[i].setVisible(true);
