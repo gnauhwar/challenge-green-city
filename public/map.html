@@ -18,71 +18,152 @@
   <body>
     <div id="map"></div>
     <script>
-var radius = 20000;
-
-var citymap = {
-  chisinau: {
-    center: {lat: 47.01116, lng: 28.85147},
-    info: '<div> fderf ef ew</div>'
-  },
-  balti: {
-    center: {lat: 47.76333, lng: 27.92175},
-    info: '<div>test</div>'
-  },
-  cahul: {
-    center: {lat: 45.90601, lng: 28.19778},
-    info: '<div> fffffffff</div>'
-  },
-  gagauzia: {
-    center: {lat: 46.09323, lng: 28.63586},
-    info: '<div>323234</div>'
-  }
-};
-
 
 function initMap() {
+  
   var map = new google.maps.Map(document.getElementById('map'), {
     zoom: 8,
     center: {lat: 47.01116, lng: 28.85147},
     mapTypeId: google.maps.MapTypeId.TERRAIN
   });
-  var circleArr = [];
-  var infowindowArr = [];
+  var countryCircle = {
+    chisinau: {
+      center: {lat: 47.01116, lng: 28.85147},
+      info: '<div> fderf ef ew</div>',
+      isCity: true
+    },
+    balti: {
+      center: {lat: 47.76333, lng: 27.92175},
+      info: '<div>test</div>',
+      isCity: true
+    },
+    cahul: {
+      center: {lat: 45.90601, lng: 28.19778},
+      info: '<div> fffffffff</div>',
+      isCity: true
+    },
+    gagauzia: {
+      center: {lat: 46.09323, lng: 28.63586},
+      info: '<div>323234</div>',
+      isCity: true
+    },
+    // city meteo stantions
+    stefan: {
+      center: {lat: 47.02298, lng: 28.83464},
+      info: '<div>city stantion on stefan street</div>',
+      isCity: false
+    },
+    gagarin: {
+      center: {lat: 47.01116, lng: 28.85147},
+      info: '<div>city stantion on gagarin street</div>',
+      isCity: false
+    }
+  };
 
-  for (var city in citymap) {
+  var countryCircleArr = [];
+  var cityCircleArr = [];
+  var radius;
 
-    var content = citymap[city].info;
-    var latLng =  citymap[city].center;
-    var infowindow = new google.maps.InfoWindow({
-      content: content
-    });
+  var dataJSON;
+  var xhttp = new XMLHttpRequest();
+  xhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+      // Typical action to be performed when the document is ready:
 
-    var marker = new google.maps.Circle({
-      strokeColor: '#FF0000',
-      strokeOpacity: 0.8,
-      strokeWeight: 0,
-      fillColor: '#FF0000',
-      fillOpacity: 0.35,
-      map: map,
-      center: citymap[city].center,
-      radius: radius
-    });
+      data = this.responseText;
 
-    google.maps.event.addListener(marker,'click', (function(marker,latLng,content,infowindow){ 
-      return function() {
-        infowindow.open(map);
-        infowindow.setPosition(latLng);
+      console.log(data);
 
-      };
-    })(marker,latLng,content,infowindow)); 
-   
-  }
+      for (var city in countryCircle) {
+        var content = countryCircle[city].info;
+        var latLng =  countryCircle[city].center;
+        var color;
+
+        var infowindow = new google.maps.InfoWindow({
+          content: content
+        });
+
+        if (countryCircle[city].isCity) {
+          color = '#FF0000';
+          radius = 20000;
+        }
+        else {
+          color = '#696969';
+          radius = 200;
+        }   
+
+        var circle = new google.maps.Circle({
+          strokeColor: color,
+          strokeOpacity: 0.8,
+          strokeWeight: 0,
+          fillColor: color,
+          fillOpacity: 0.35,
+          map: map,
+          center: countryCircle[city].center,
+          radius: radius
+        });
+
+        if (countryCircle[city].isCity) {
+          countryCircleArr.push(circle);
+        }
+        else {
+          cityCircleArr.push(circle);
+        }    
+
+        google.maps.event.addListener(circle,'click', (function(circle,latLng,infowindow){ 
+          return function() {
+            infowindow.open(map);
+            infowindow.setPosition(latLng);
+
+          };
+        })(circle,latLng,infowindow));   
+      }
+      
+      map.addListener('zoom_changed', function() {
+        var zoomLevel = map.getZoom();
+        console.log('Zoom: ' + map.getZoom())
+
+        if (zoomLevel >= 12) {
+          console.log('zoom = 12');
+          hideCountryCircle();
+          showCityCircle();
+        }
+        else {
+          console.log('other zoom');
+          showCountryCircle();
+          hideCityCircle();
+        }
+      });
+    }
+  };
+  xhttp.open("GET", "http://127.0.0.1:8000/data", true);
+  xhttp.send();
+
+
 }
 
-function addlatLng(event) {
-  
-  infowindow.open(map);
+function hideCountryCircle() {
+  for (var i = 0; i < countryCircleArr.length; i++) {
+    countryCircleArr[i].setVisible(false);
+  };
 }
+
+function showCountryCircle() {
+  for (var i = countryCircleArr.length - 1; i >= 0; i--) {
+    countryCircleArr[i].setVisible(true);
+  };
+}
+function hideCityCircle() {
+  for (var i = 0; i < cityCircleArr.length; i++) {
+    cityCircleArr[i].setVisible(false);
+  };
+}
+function showCityCircle() {
+  for (var i = 0; i < cityCircleArr.length; i++) {
+    cityCircleArr[i].setVisible(true);
+  };
+}
+
 
     </script>
     <script async defer

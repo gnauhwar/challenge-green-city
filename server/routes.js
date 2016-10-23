@@ -3,5 +3,6 @@ module.exports = function (app) {
 
 
   app.get('/test', main.testApi);
-  app.get('/parse', main.parseApi)
+  app.get('/parse', main.parseApi);
+  app.get('/data', main.dataApi);
 };

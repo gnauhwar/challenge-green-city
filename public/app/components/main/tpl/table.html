@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+
+  <table class="table">
+    <thead>
+      <tr>
+        <th>City</th>
+        <th>CH(t)</th>
+        <th>SO<sub>2</sub>(t)</th>
+        <th>CO(t)</th>
+        <th>NO<sub>2</sub>(t)</th>
+        <th>Substante solide(t)</th>
+        <th>Compusi organice volatili(t)</th>
+        <th>Altele(t)</th>
+        <th ng-click="table.sortBy('medie')">Nota Medie</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <tr ng-repeat="obj in table.data | orderBy:table.propertyName:table.reverse">
+        <td>{{obj.city}}</td>
+        <td>{{obj.ch | number : fractionSize}}</td>
+        <td>{{obj.so | number : fractionSize}}</td>
+        <td>{{obj.co | number : fractionSize}}</td>
+        <td>{{obj.no | number : fractionSize}}</td>
+        <td>{{obj.subst | number : fractionSize}}</td>
+        <td>{{obj.compusi | number : fractionSize}}</td>
+        <td>{{obj.altele | number : fractionSize}}</td>
+        <td>{{obj.medie | number : fractionSize}}</td>
+      </tr>
+    </tbody>
+  </table>
+
+</body>
+</html>

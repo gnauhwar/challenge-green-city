@@ -2,3 +2,8 @@
 	font-family: blackBox;
 	src: url('./../fonts/Black-coffee.ttf');
 }
+
+@font-face {
+	font-family: Open Sans;
+	src:  url('https://fonts.googleapis.com/css?family=Open+Sans');
+}

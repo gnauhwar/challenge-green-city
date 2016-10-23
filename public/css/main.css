@@ -1,5 +1,10 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans');
+
+
 body {
 	padding-top: 50px;
+	font-family: 'Open Sans';
+
 }
 
 .wrapper {
@@ -41,4 +46,59 @@ main {
 	background-color: #C8E6C9;
 	margin-top: 40px;
 	border-radius: 8px;
+}
+
+.table {
+	font-size: 14px;
+	margin: 0 auto 40px;
+	border-spacing: 0;
+	border: 1px solid #bdc3c7;
+}
+
+.table thead {
+	box-shadow: 0 2px 4px 0px rgba(0, 0, 0, .34);
+}
+
+.table tbody {
+}
+
+.table td, .table th {
+	padding: 10px 10px;
+	/*border: 1px solid #ccc;*/
+	font-family: 'Open Sans';
+}
+
+.table td {
+	text-align: center;
+}
+
+.table thead {
+	color: #fff;
+	background: #1abc9c;
+}
+
+.table tr:nth-child(2n) {
+	background: #ecf0f1;
+}
+
+.btns {
+	display: block;
+	margin: 50px auto;
+	width: 350px;
+}
+
+.btns a {
+	text-align: center;
+	color: #fff;
+	background: #1abc9c;
+	text-decoration: none;
+	padding: 10px 55px;
+	margin: 0 5px;
+}
+
+.logo h1{
+	text-align: center;
+	/*background: #1abc9c;*/
+	margin: 0 auto;
+	color: #1abc9c;
 }

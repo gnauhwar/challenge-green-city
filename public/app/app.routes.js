@@ -15,10 +15,13 @@
 				.state('main.map', {
 					url: '/map',
 				})
-				.state('main.table', {
-					url: '/table'
+				.state('table', {
+					url: '/table',
+					templateUrl: 'app/components/main/tpl/table.html',
+					controller: 'tableCtrl',
+					controllerAs: 'table'
 				})
 
-			$urlRouterProvider.otherwise('main.map');
+			$urlRouterProvider.otherwise('/main');
 		}
 }());
