@@ -95,3 +95,10 @@ main {
 	padding: 10px 55px;
 	margin: 0 5px;
 }
+
+.logo h1{
+	text-align: center;
+	/*background: #1abc9c;*/
+	margin: 0 auto;
+	color: #1abc9c;
+}

@@ -130,6 +130,8 @@ module.exports.dataApi = function dataApi (req, res) {
   var obj = JSON.parse(fs.readFileSync('cities.json', 'utf8'));
   var array = [];
 
+  var result = JSON.parse(JSON.stringify(obj));
+
   function getAveregeValue (arr, params) {
     var total = arr[arr.length - 1][params];
     var averege = total / 35;
@@ -161,9 +163,9 @@ module.exports.dataApi = function dataApi (req, res) {
       }
     }
    };
-  function getAveregeNote(obj) {
-    for (var i = 0; i < obj.length; i++) {
-      obj[i].medie = +obj[i].ch + +obj[i].so + +obj[i].co + +obj[i].no + +obj[i].subst + +obj[i].compusi + +obj[i].altele;
+  function getAveregeNote(obj, result) {
+    for (var i = 0; i < result.length; i++) {
+      result[i].medie = +obj[i].ch + +obj[i].so + +obj[i].co + +obj[i].no + +obj[i].subst + +obj[i].compusi + +obj[i].altele;
     }
   }
   getAveregeValue(obj, 'ch');
@@ -175,7 +177,9 @@ module.exports.dataApi = function dataApi (req, res) {
   getAveregeValue(obj, 'altele');
   obj.splice(obj.length - 1, 1);
   obj.splice(4, 1);
-  getAveregeNote(obj);
+  result.splice(result.length - 1, 1);
+  result.splice(4, 1);
+  getAveregeNote(obj, result);
 
-  res.send(obj);
+  res.send(result);
 }
