@@ -23,13 +23,13 @@ Guides and the API reference are located in the
 
 ## Quick Start
 
-*Clone the project
+Clone the project
 
-*Install dependencies:
+Install dependencies:
   - cd <%project-folder%>
   - npm i
 
-*Run the Server
+Run the Server
   - node server/server.js
 
 ## Community
