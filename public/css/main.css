@@ -133,3 +133,19 @@ main {
 	z-index: 5;
 	height: 90vh;
 }
+
+.desc {
+	position: absolute;
+	z-index: 20;
+	top: 39px;
+	right: 0px;
+	width: 410px;
+	font-size: 0.8em;
+}
+
+.logos {
+position: absolute;
+font-size: 1.8em;
+right: 162px;
+top: 1px;
+}
