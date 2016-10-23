@@ -7,7 +7,11 @@
   <title>Document</title>
 </head>
 <body>
-
+  <sub style="margin: 0 auto; width: 900px; display:block">
+    <p>*Average Mark depends on the grade of air pollution, less the polution value, higher the mark.
+    </p>
+    <br>
+  </sub>
   <table class="table">
     <thead>
       <tr>
@@ -18,10 +22,10 @@
         <th>SO<sub>2</sub>(t)</th>
         <th>CO(t)</th>
         <th>NO<sub>2</sub>(t)</th>
-        <th>Substante solide(t)</th>
-        <th>Compusi organice volatili(t)</th>
-        <th>Altele(t)</th>
-        <th ng-click="table.sortBy('medie')">Nota Medie<span class="sortorder" ng-show="table.propertyName === 'medie'" ng-class="{reverse: table.reverse}"></span></th>
+        <th>Solids(t)</th>
+        <th>Volatile organic compounds(t)</th>
+        <th>Other(t)</th>
+        <th ng-click="table.sortBy('medie')">Average Mark<span class="sortorder" ng-show="table.propertyName === 'medie'" ng-class="{reverse: table.reverse}"></span></th>
       </tr>
     </thead>
 
