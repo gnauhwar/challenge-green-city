@@ -2,6 +2,8 @@ var parse = require('excel-parser');
 var path = require('path');
 var fs = require('fs');
 
+
+
 module.exports.testApi = function testApi (req, res) {
   res.send('Server is loaded')
 };
@@ -121,4 +123,50 @@ module.exports.parseApi = function parseApi (req, res) {
     // console.log(res);
   })
   // res.send();
+}
+
+
+module.exports.dataApi = function dataApi (req, res) {
+  var obj = JSON.parse(fs.readFileSync('cities.json', 'utf8'));
+  var array = [];
+
+  function getAveregeValue (arr, params) {
+    var total = arr[arr.length - 1][params];
+    var averege = total / 35;
+    for (var i = 0; i < arr.length; i++) {
+      arr[i][params] = notee(arr[i][params], averege);
+    }
+    console.log(obj);
+  }
+
+  function notee(value, average) {
+    var objNote = {
+      10: 0.1,
+      9: 0.2,
+      8: 0.4,
+      7: 0.6,
+      6: 0.8,
+      5: 1,
+      4: 4,
+      3: 6,
+      2: 8
+    };
+    var note = Object.keys(objNote);
+    var a = value/average;
+    for (var i = note.length; i>=0; i--) {
+      if(a<=objNote[note[i]]) {
+        return note[i];
+      } else if(a > 8) {
+        return 1;
+      }
+    }
+   };
+  getAveregeValue(obj, 'ch');
+  getAveregeValue(obj, 'so');
+  getAveregeValue(obj, 'co');
+  getAveregeValue(obj, 'no');
+  getAveregeValue(obj, 'subst');
+  getAveregeValue(obj, 'compusi');
+  getAveregeValue(obj, 'altele');
+  res.send(obj);
 }
