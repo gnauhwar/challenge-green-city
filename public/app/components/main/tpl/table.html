@@ -11,7 +11,9 @@
   <table class="table">
     <thead>
       <tr>
-        <th>City</th>
+        <!-- <th>City</th> -->
+        <th ng-click="table.sortBy('city')">City<span class="sortorder" ng-show="table.propertyName === 'city'" ng-class="{reverse: table.reverse}"></span></th>
+
         <th>CH(t)</th>
         <th>SO<sub>2</sub>(t)</th>
         <th>CO(t)</th>
@@ -19,7 +21,7 @@
         <th>Substante solide(t)</th>
         <th>Compusi organice volatili(t)</th>
         <th>Altele(t)</th>
-        <th ng-click="table.sortBy('medie')">Nota Medie</th>
+        <th ng-click="table.sortBy('medie')">Nota Medie<span class="sortorder" ng-show="table.propertyName === 'medie'" ng-class="{reverse: table.reverse}"></span></th>
       </tr>
     </thead>
 
