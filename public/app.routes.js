@@ -5,5 +5,8 @@
 			.state('main' , {
 				url: '/main',
 				temlate: '<p>asdasdasdasdasd</p>'
+			}).state('table' , {
+				url: '/table',
+				temlateUrl: './public/tpls/table.html'
 			})
 	})

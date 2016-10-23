@@ -161,6 +161,11 @@ module.exports.dataApi = function dataApi (req, res) {
       }
     }
    };
+  function getAveregeNote(obj) {
+    for (var i = 0; i < obj.length; i++) {
+      obj[i].medie = +obj[i].ch + +obj[i].so + +obj[i].co + +obj[i].no + +obj[i].subst + +obj[i].compusi + +obj[i].altele;
+    }
+  }
   getAveregeValue(obj, 'ch');
   getAveregeValue(obj, 'so');
   getAveregeValue(obj, 'co');
@@ -168,5 +173,9 @@ module.exports.dataApi = function dataApi (req, res) {
   getAveregeValue(obj, 'subst');
   getAveregeValue(obj, 'compusi');
   getAveregeValue(obj, 'altele');
+  obj.splice(obj.length - 1, 1);
+  obj.splice(4, 1);
+  getAveregeNote(obj);
+
   res.send(obj);
 }
