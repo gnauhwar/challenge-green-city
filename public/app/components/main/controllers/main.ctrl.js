@@ -5,5 +5,6 @@
 
 			function MainCtrl ($state) {
 				var self = this;
+				self.url = "map.html";
 			}
 }());

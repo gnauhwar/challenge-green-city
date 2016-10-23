@@ -11,5 +11,16 @@
           self.data = data.data;
         });
 
+
+
+				self.propertyName = '';
+				self.reverse = true;
+				// self.data = self;
+
+				self.sortBy = function(propertyName) {
+			    self.reverse = (self.propertyName === propertyName) ? !self.reverse : false;
+			    self.propertyName = propertyName;
+		  };
+
 			}
 }());

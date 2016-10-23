@@ -12,28 +12,28 @@
     <thead>
       <tr>
         <th>City</th>
-        <th>CH</th>
-        <th>SO<sub>2</sub></th>
-        <th>CO</th>
-        <th>NO<sub>2</sub></th>
-        <th>Substante solide</th>
-        <th>Compusi organice volatili</th>
-        <th>Altele</th>
-        <th>Medie</th>
+        <th>CH(t)</th>
+        <th>SO<sub>2</sub>(t)</th>
+        <th>CO(t)</th>
+        <th>NO<sub>2</sub>(t)</th>
+        <th>Substante solide(t)</th>
+        <th>Compusi organice volatili(t)</th>
+        <th>Altele(t)</th>
+        <th ng-click="table.sortBy('medie')">Nota Medie</th>
       </tr>
     </thead>
 
     <tbody>
-      <tr ng-repeat="obj in table.data">
+      <tr ng-repeat="obj in table.data | orderBy:table.propertyName:table.reverse">
         <td>{{obj.city}}</td>
-        <td>{{obj.ch}}</td>
-        <td>{{obj.so}}</td>
-        <td>{{obj.co}}</td>
-        <td>{{obj.no}}</td>
-        <td>{{obj.subst}}</td>
-        <td>{{obj.compusi}}</td>
-        <td>{{obj.altele}}</td>
-        <td>{{obj.medie}}</td>
+        <td>{{obj.ch | number : fractionSize}}</td>
+        <td>{{obj.so | number : fractionSize}}</td>
+        <td>{{obj.co | number : fractionSize}}</td>
+        <td>{{obj.no | number : fractionSize}}</td>
+        <td>{{obj.subst | number : fractionSize}}</td>
+        <td>{{obj.compusi | number : fractionSize}}</td>
+        <td>{{obj.altele | number : fractionSize}}</td>
+        <td>{{obj.medie | number : fractionSize}}</td>
       </tr>
     </tbody>
   </table>

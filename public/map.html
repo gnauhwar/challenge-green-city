@@ -68,19 +68,19 @@ function initMap() {
       radius: radius
     });
 
-    google.maps.event.addListener(marker,'click', (function(marker,latLng,content,infowindow){ 
+    google.maps.event.addListener(marker,'click', (function(marker,latLng,content,infowindow){
       return function() {
         infowindow.open(map);
         infowindow.setPosition(latLng);
 
       };
-    })(marker,latLng,content,infowindow)); 
-   
+    })(marker,latLng,content,infowindow));
+
   }
 }
 
 function addlatLng(event) {
-  
+
   infowindow.open(map);
 }
 
