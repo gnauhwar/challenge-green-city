@@ -25,7 +25,7 @@
       <div style="background-color: #D97924; width: 80px; height: 45px; display: inline-block; margin: 0; padding: 0;"></div>
       <div style="background-color: #F09C33; width: 80px; height: 45px; display: inline-block; margin: 0; padding: 0;"></div>
       <div style="background-color: #F2B33C; width: 80px; height: 45px; display: inline-block; margin: 0; padding: 0;"></div>
-      <div style="border-top: 2px solid black; width: 585px;"><div style="float: left; color: red; font-weight: 700;">Bad(Nota 0)</div> <div style="float: right; color: green; font-weight: 700;">Good(Nota 60+)</div></div>
+      <div style="border-top: 2px solid black; width: 585px;"><div style="float: left; color: red; font-weight: 700;">Bad(Rating 0)</div> <div style="float: right; color: green; font-weight: 700;">Good(Rating 60+)</div></div>
     </div>
     <script>
 
@@ -252,15 +252,15 @@ function initMap() {
 
             console.log(countryCircle[city].info);
 
-            content = '<div style="font-size: 25px; font-weight: 700;">' + city + '</div>' + '<div style="font-size: 20px; font-weight: 700;">Nota aerului condiționat: ' + data[i].medie + '</div>'
-            + '<div style="font-weight: 700;">Emisiile:</div>'
+            content = '<div style="font-size: 25px; font-weight: 700;">' + city + '</div>' + '<div style="font-size: 20px; font-weight: 700;">Rating: ' + data[i].medie + '</div>'
+            + '<div style="font-weight: 700;">Emissions:</div>'
             + '<div>CH(t): ' + data[i].ch + '</div>' + '</div>'
             + '<div>SO<sub>2</sub>(t): ' + data[i].so + '</div>'
             + '<div>CO(t): ' + data[i].co + '</div>'
             + '<div>NO<sub>2</sub>(t): ' + data[i].no + '</div>'
-            + '<div>Substante solide(t): ' + data[i].subst + '</div> '
-            + '<div>Compusi organice volatili(t): ' + data[i].compusi + '</div> '
-            + '<div>Altele(t): ' + data[i].altele + '</div> ';
+            + '<div>Solids(t): ' + data[i].subst + '</div> '
+            + '<div>Volatile organic compounds(t): ' + data[i].compusi + '</div> '
+            + '<div>Other(t): ' + data[i].altele + '</div> ';
             console.log(countryCircle[city].info);
           }
         };
