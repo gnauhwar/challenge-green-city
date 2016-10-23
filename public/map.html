@@ -17,47 +17,212 @@
   </head>
   <body>
     <div id="map"></div>
+    <div style="position: absolute; bottom: 0px; left: 0px; background-color: white;">
+      <div style="background-color: #841F01; width: 80px; height: 45px; display: inline-block; margin: 0; padding: 0;"></div>
+      <div style="background-color: #942901; width: 80px; height: 45px; display: inline-block; margin: 0; padding: 0;"></div>
+      <div style="background-color: #BE3501; width: 80px; height: 45px; display: inline-block; margin: 0; padding: 0;"></div>
+      <div style="background-color: #C15310; width: 80px; height: 45px; display: inline-block; margin: 0; padding: 0;"></div>
+      <div style="background-color: #D97924; width: 80px; height: 45px; display: inline-block; margin: 0; padding: 0;"></div>
+      <div style="background-color: #F09C33; width: 80px; height: 45px; display: inline-block; margin: 0; padding: 0;"></div>
+      <div style="background-color: #F2B33C; width: 80px; height: 45px; display: inline-block; margin: 0; padding: 0;"></div>
+      <div style="border-top: 2px solid black; width: 585px;"><div style="float: left; color: red; font-weight: 700;">Bad(Nota 0)</div> <div style="float: right; color: green; font-weight: 700;">Good(Nota 60+)</div></div>
+    </div>
     <script>
 
 function initMap() {
-  
+
   var map = new google.maps.Map(document.getElementById('map'), {
     zoom: 8,
     center: {lat: 47.01116, lng: 28.85147},
     mapTypeId: google.maps.MapTypeId.TERRAIN
   });
   var countryCircle = {
-    chisinau: {
+    "Chişinău": {
       center: {lat: 47.01116, lng: 28.85147},
       info: '<div> fderf ef ew</div>',
       isCity: true
     },
-    balti: {
+    "Bălţi": {
       center: {lat: 47.76333, lng: 27.92175},
       info: '<div>test</div>',
       isCity: true
     },
-    cahul: {
+    "Cahul": {
       center: {lat: 45.90601, lng: 28.19778},
       info: '<div> fffffffff</div>',
       isCity: true
     },
-    gagauzia: {
+    "Găgăuzia": {
       center: {lat: 46.09323, lng: 28.63586},
       info: '<div>323234</div>',
       isCity: true
     },
-    // city meteo stantions
-    stefan: {
-      center: {lat: 47.02298, lng: 28.83464},
-      info: '<div>city stantion on stefan street</div>',
-      isCity: false
+    "Ungheni": {
+      center: {lat: 47.228595, lng: 27.791209},
+      info: '<div>323234</div>',
+      isCity: true
     },
-    gagarin: {
-      center: {lat: 47.01116, lng: 28.85147},
-      info: '<div>city stantion on gagarin street</div>',
-      isCity: false
+    "Teleneşti": {
+      center: {lat: 47.499557, lng: 28.367708},
+      info: '<div>323234</div>',
+      isCity: true
+    },
+    "Taraclia": {
+      center: {lat: 45.899429, lng: 28.666801},
+      info: '<div>323234</div>',
+      isCity: true
+    },
+    "Şoldăneşti": {
+      center: {lat: 47.816523, lng: 28.790654},
+      info: '<div>323234</div>',
+      isCity: true
+    },
+    "Străşeni": {
+      center: {lat: 47.146217, lng: 28.614513},
+      info: '<div>323234</div>',
+      isCity: true
+    },
+    "Soroca": {
+      center: {lat: 48.157839, lng: 28.290953},
+      info: '<div>323234</div>',
+      isCity: true
+    },
+    "Sîngerei": {
+      center: {lat: 47.637765, lng: 28.142155},
+      info: '<div>323234</div>',
+      isCity: true
+    },
+    "Ştefan-Vodă": {
+      center: {lat: 46.514404, lng: 29.663801},
+      info: '<div>323234</div>',
+      isCity: true
+    },
+    "Rîşcani": {
+      center: {lat: 47.947073, lng: 27.559899},
+      info: '<div>323234</div>',
+      isCity: true
+    },
+    "Rezina": {
+      center: {lat: 47.748160, lng: 28.967052},
+      info: '<div>323234</div>',
+      isCity: true
+    },
+    "Orhei": {
+      center: {lat: 47.386722, lng: 28.829898},
+      info: '<div>323234</div>',
+      isCity: true
+    },
+    "Ocniţa": {
+      center: {lat: 48.386270, lng: 27.443281},
+      info: '<div>323234</div>',
+      isCity: true
+    },
+    "Nisporeni": {
+      center: {lat: 47.075818, lng: 28.177514},
+      info: '<div>323234</div>',
+      isCity: true
+    },
+    "Leova": {
+      center: {lat: 46.479371, lng: 28.254835},
+      info: '<div>323234</div>',
+      isCity: true
+    },
+    "Ialoveni": {
+      center: {lat: 46.944170, lng: 28.782339},
+      info: '<div>323234</div>',
+      isCity: true
+    },
+    "Hînceşti": {
+      center: {lat: 46.829359, lng: 28.586790},
+      info: '<div>323234</div>',
+      isCity: true
+    },
+    "Glodeni": {
+      center: {lat: 47.779951, lng: 27.516967},
+      info: '<div>323234</div>',
+      isCity: true
+    },
+    "Floreşti": {
+      center: {lat: 47.892517, lng: 28.301618},
+      info: '<div>323234</div>',
+      isCity: true
+    },
+    "Făleşti": {
+      center: {lat: 47.574098, lng: 27.715721},
+      info: '<div>323234</div>',
+      isCity: true
+    },
+    "Edineţ": {
+      center: {lat: 48.171320, lng: 27.300545},
+      info: '<div>323234</div>',
+      isCity: true
+    },
+    "Dubăsari": {
+      center: {lat: 47.265616, lng: 29.154271},
+      info: '<div>323234</div>',
+      isCity: true
+    },
+    "Drochia": {
+      center: {lat: 48.117488, lng: 27.807613},
+      info: '<div>323234</div>',
+      isCity: true
+    },
+    "Donduşeni": {
+      center: {lat: 48.218716, lng: 27.581008},
+      info: '<div>323234</div>',
+      isCity: true
+    },
+    "Criuleni": {
+      center: {lat: 47.213292, lng: 29.156012},
+      info: '<div>323234</div>',
+      isCity: true
+    },
+    "Cimişlia": {
+      center: {lat: 46.523973, lng: 28.782222},
+      info: '<div>323234</div>',
+      isCity: true
+    },
+    "Căuseni": {
+      center: {lat: 46.654557, lng: 29.408483},
+      info: '<div>323234</div>',
+      isCity: true
+    },
+    "Călăraşi": {
+      center: {lat: 47.249064, lng: 28.318429},
+      info: '<div>323234</div>',
+      isCity: true
+    },
+    "Cantemir": {
+      center: {lat: 46.277703, lng: 28.201405},
+      info: '<div>323234</div>',
+      isCity: true
+    },
+    "Briceni": {
+      center: {lat: 48.361388, lng: 27.080697},
+      info: '<div>323234</div>',
+      isCity: true
+    },
+    "Basarabeasca" : {
+      center: {lat: 46.330391, lng: 28.973288},
+      info: '<div>323234</div>',
+      isCity: true
+    },
+    "Anenii-Noi" : {
+      center: {lat: 46.880383, lng: 29.231614},
+      info: '<div>323234</div>',
+      isCity: true
     }
+    // city meteo stantions
+    // stefan: {
+    //   center: {lat: 47.02298, lng: 28.83464},
+    //   info: '<div>city stantion on stefan street</div>',
+    //   isCity: false
+    // },
+    // gagarin: {
+    //   center: {lat: 47.01116, lng: 28.85147},
+    //   info: '<div>city stantion on gagarin street</div>',
+    //   isCity: false
+    // }
   };
 
   var countryCircleArr = [];
@@ -66,11 +231,12 @@ function initMap() {
 
   var dataJSON;
   var xhttp = new XMLHttpRequest();
+
   xhttp.onreadystatechange = function() {
     if (this.readyState == 4 && this.status == 200) {
       // Typical action to be performed when the document is ready:
 
-      data = this.responseText;
+      data = JSON.parse(this.responseText);
 
       console.log(data);
 
@@ -79,18 +245,64 @@ function initMap() {
         var latLng =  countryCircle[city].center;
         var color;
 
+
+        for (var i = 0; i < data.length; i++) {
+          if(data[i].city === city) {
+            console.log(city, data[i].city);
+
+            console.log(countryCircle[city].info);
+
+            content = '<div style="font-size: 25px; font-weight: 700;">' + city + '</div>' + '<div style="font-size: 20px; font-weight: 700;">Nota aerului condiționat: ' + data[i].medie + '</div>'
+            + '<div style="font-weight: 700;">Emisiile:</div>'
+            + '<div>CH(t): ' + data[i].ch + '</div>' + '</div>'
+            + '<div>SO<sub>2</sub>(t): ' + data[i].so + '</div>'
+            + '<div>CO(t): ' + data[i].co + '</div>'
+            + '<div>NO<sub>2</sub>(t): ' + data[i].no + '</div>'
+            + '<div>Substante solide(t): ' + data[i].subst + '</div> '
+            + '<div>Compusi organice volatili(t): ' + data[i].compusi + '</div> '
+            + '<div>Altele(t): ' + data[i].altele + '</div> ';
+            console.log(countryCircle[city].info);
+          }
+        };
+
+        function setcolor() {
+          var objColor = {
+            10: '#841F01',
+            20: '#942901',
+            30: '#BE3501',
+            40: '#C15310',
+            50: '#D97924',
+            60: '#F09C33',
+            70: '#F2B33C'
+          };
+          // console.log(data[city])
+          for (var i = 0; i < data.length; i++) {
+            if(data[i].city === city) {
+              // console.log(data[i].medie);
+              for (var key in objColor) {
+                // console.log(data[i].medie <= +key, key, data[i].medie);
+                if(data[i].medie <= +key) {
+                  return objColor[key];
+                }
+              }
+            }
+          }
+        }
+
+
         var infowindow = new google.maps.InfoWindow({
           content: content
         });
 
         if (countryCircle[city].isCity) {
-          color = '#FF0000';
-          radius = 20000;
+          // console.log(setcolor());
+          color = setcolor();
+          radius = 10000;
         }
         else {
           color = '#696969';
           radius = 200;
-        }   
+        }
 
         var circle = new google.maps.Circle({
           strokeColor: color,
@@ -108,17 +320,17 @@ function initMap() {
         }
         else {
           cityCircleArr.push(circle);
-        }    
+        }
 
-        google.maps.event.addListener(circle,'click', (function(circle,latLng,infowindow){ 
+        google.maps.event.addListener(circle,'click', (function(circle,latLng,infowindow){
           return function() {
             infowindow.open(map);
             infowindow.setPosition(latLng);
 
           };
-        })(circle,latLng,infowindow));   
+        })(circle,latLng,infowindow));
       }
-      
+
       map.addListener('zoom_changed', function() {
         var zoomLevel = map.getZoom();
         console.log('Zoom: ' + map.getZoom())
@@ -149,7 +361,7 @@ function hideCountryCircle() {
 }
 
 function showCountryCircle() {
-  for (var i = countryCircleArr.length - 1; i >= 0; i--) {
+  for (var i = 0; i < countryCircleArr.length; i++) {
     countryCircleArr[i].setVisible(true);
   };
 }

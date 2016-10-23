@@ -77,6 +77,10 @@ main {
 	background: #1abc9c;
 }
 
+.table thead th {
+	cursor: pointer;
+}
+
 .table tr:nth-child(2n) {
 	background: #ecf0f1;
 }
@@ -101,4 +105,11 @@ main {
 	/*background: #1abc9c;*/
 	margin: 0 auto;
 	color: #1abc9c;
+}
+
+.sortorder:after {
+  content: '\25b2';   // BLACK UP-POINTING TRIANGLE
+}
+.sortorder.reverse:after {
+  content: '\25bc';   // BLACK DOWN-POINTING TRIANGLE
 }
