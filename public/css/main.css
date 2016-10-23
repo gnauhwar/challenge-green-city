@@ -2,14 +2,8 @@
 
 
 body {
-	padding-top: 50px;
 	font-family: 'Open Sans';
-
-}
-
-.wrapper {
-	width: 90%;
-	margin: 0 auto;
+	height: 100%;
 }
 
 .btn-wrapper {
@@ -17,10 +11,17 @@ body {
 }
 
 header {
+	position: relative;
+	z-index: 10;
 	display: flex;
 	flex-direction: row;
 	justify-content: space-between;
 	align-items: center;
+	width: 100%;
+	height: 80px;
+	-webkit-box-shadow: -3px 4px 5px 0px rgba(0,0,0,0.75);
+-moz-box-shadow: -3px 4px 5px 0px rgba(0,0,0,0.75);
+box-shadow: -3px 4px 5px 0px rgba(0,0,0,0.75);
 }
 
 .btn {
@@ -31,7 +32,7 @@ header {
 	text-align: center;
 	width: 140px;
 	height: 60px;
-	background-color: #388E3C;
+	border: 3px solid #388E3C;
 	border-radius: 8px;
 	margin-right: 60px;
 	font-family: blackBox;
@@ -86,18 +87,26 @@ main {
 }
 
 .btns {
-	display: block;
-	margin: 50px auto;
-	width: 350px;
+	display: flex;
+	flex-direction: row;
+	margin-left: 30px;
 }
 
 .btns a {
 	text-align: center;
 	color: #fff;
-	background: #1abc9c;
+	border: 3px solid #1abc9c;
+	border-radius: 13px;
+	color: #1abc9c;
 	text-decoration: none;
-	padding: 10px 55px;
-	margin: 0 5px;
+	padding: 10px 35px;
+	margin: 0 15px;
+	transition: all .3s ease-in-out;
+}
+
+.btns a:hover {
+	background-color: #1abc9c;
+	color: #fff;
 }
 
 .logo h1{
@@ -112,4 +121,15 @@ main {
 }
 .sortorder.reverse:after {
   content: '\25bc';   // BLACK DOWN-POINTING TRIANGLE
+}
+
+.wrapper {
+	width: 100%;
+	height: 100%;
+}
+
+.wrapper iframe {
+	position: relative;
+	z-index: 5;
+	height: 90vh;
 }
